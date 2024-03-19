@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title ng-controller="myCtrl">{{DatVe}}</title>
+  </head>
+  <body class="p-0 m-0 border-0 bd-example border-0">
+    <!-- header -->
+    <nav class="navbar p-4 navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="../img/logo.png" alt="" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item text-uppercase" style="font-size: 20px">
+              <a class="nav-link fw-bold" aria-current="page" href="#"
+                >Lịch chiếu theo rạp</a
+              >
+            </li>
+            <li class="nav-item text-uppercase" style="font-size: 20px">
+              <a class="nav-link fw-bold" href="#">Phim</a>
+            </li>
+            <li class="nav-item text-uppercase" style="font-size: 20px">
+              <a class="nav-link fw-bold" href="#">Rạp</a>
+            </li>
+          </ul>
+        </div>
+        <div id="login-web" class="align-bottom">
+          <button class="btn btn-secondary">Đăng Nhập</button>
+          <button class="btn btn-secondary">Đăng Ký</button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="row text-center d-flex mt-4">
+      <p class="fw-bold mt-3 text-uppercase" style="font-size: 35px">
+        Đặt phòng
+      </p>
+      <p>
+        <span class="fw-bold" style="color: red">Cơ sở: </span>Tầng 2 - Hà Nội
+      </p>
+      <p>
+        <span class="fw-bold" style="color: red">Sơ phòng còn trống: </span>12
+      </p>
+    </div>
+
+    <div class="row text-center d-flex justify-content-center mt-3">
+      <p class="fw-bold" style="font-size: 25px">Sơ Đồ Phòng Khách Sạn</p>
+      <div class="content mx-auto w-75 p-2">
+        <div class="table">
+          <div class="row mb-3 d-flex justify-content-between">
+            <div
+              class="col-md-1 text-center p-0 justify-content-center align-items-center"
+            >
+              <p class="m-0" style="font-size: 25px; background-color: #add8e6">
+                1
+              </p>
+            </div>
+            <div
+              class="col-md-1 text-center p-0 justify-content-center align-items-center"
+            >
+              <p class="m-0" style="font-size: 25px; background-color: #add8e6">
+                2
+              </p>
+            </div>
+            <div
+              class="col-md-1 text-center p-0 justify-content-center align-items-center"
+            >
+              <p class="m-0" style="font-size: 25px; background-color: #ffd700">
+                3
+              </p>
+            </div>
+            <div
+              class="col-md-1 text-center p-0 justify-content-center align-items-center"
+            >
+              <p class="m-0" style="font-size: 25px; background-color: #ffd700">
+                4
+              </p>
+            </div>
+            <div
+              class="col-md-1 text-center p-0 justify-content-center align-items-center"
+            >
+              <p class="m-0" style="font-size: 25px; background-color: #add8e6">
+                5
+              </p>
+            </div>
+            <div
+              class="col-md-1 text-center p-0 justify-content-center align-items-center"
+            >
+              <p class="m-0" style="font-size: 25px; background-color: #ffd700">
+                6
+              </p>
+            </div>
+            <div
+              class="col-md-1 text-center p-0 justify-content-center align-items-center"
+            >
+              <p class="m-0" style="font-size: 25px; background-color: #add8e6">
+                7
+              </p>
+            </div>
+            <div
+              class="col-md-1 text-center p-0 justify-content-center align-items-center"
+            >
+              <p class="m-0" style="font-size: 25px; background-color: #ffd700">
+                8
+              </p>
+            </div>
+            <div
+              class="col-md-1 text-center p-0 justify-content-center align-items-center"
+            >
+              <p class="m-0" style="font-size: 25px; background-color: #ffd700">
+                9
+              </p>
+            </div>
+            <div
+              class="col-md-1 text-center p-0 justify-content-center align-items-center"
+            >
+              <p class="m-0" style="font-size: 25px; background-color: #add8e6">
+                10
+              </p>
+            </div>
+            <div
+              class="col-md-1 text-center p-0 justify-content-center align-items-center"
+            >
+              <p class="m-0" style="font-size: 25px; background-color: #ffd700">
+                11
+              </p>
+            </div>
+          </div>
+          <div class="row mb-3 d-flex justify-content-between">
+            <div
+              class="col-md-1 text-center p-0 justify-content-center align-items-center"
+            >
+              <p class="m-0" style="font-size: 25px; background-color: #add8e6">
+                12
+              </p>
+            </div>
+            <div
+              class="col-md-1 text-center p-0 justify-content-center align-items-center"
+            >
+              <p class="m-0" style="font-size: 25px; background-color: #add8e6">
+                13
+              </p>
+            </div>
+            <div
+              class="col-md-1 text-center p-0 justify-content-center align-items-center"
+            >
+              <p class="m-0" style="font-size: 25px; background-color: #ffd700">
+                14
+              </p>
+            </div>
+            <div
+              class="col-md-1 text-center p-0 justify-content-center align-items-center"
+            >
+              <p class="m-0" style="font-size: 25px; background-color: #ffd700">
+                15
+              </p>
+            </div>
+            <div
+              class="col-md-1 text-center p-0 justify-content-center align-items-center"
+            >
+              <p class="m-0" style="font-size: 25px; background-color: #ffd700">
+                16
+              </p>
+            </div>
+            <div
+              class="col-md-1 text-center p-0 justify-content-center align-items-center"
+            >
+              <p class="m-0" style="font-size: 25px; background-color: #ffd700">
+                17
+              </p>
+            </div>
+            <div
+              class="col-md-1 text-center p-0 justify-content-center align-items-center"
+            >
+              <p class="m-0" style="font-size: 25px; background-color: #add8e6">
+                18
+              </p>
+            </div>
+            <div
+              class="col-md-1 text-center p-0 justify-content-center align-items-center"
+            >
+              <p class="m-0" style="font-size: 25px; background-color: #ffd700">
+                19
+              </p>
+            </div>
+            <div
+              class="col-md-1 text-center p-0 justify-content-center align-items-center"
+            >
+              <p class="m-0" style="font-size: 25px; background-color: #ffd700">
+                20
+              </p>
+            </div>
+            <div
+              class="col-md-1 text-center p-0 justify-content-center align-items-center"
+            >
+              <p class="m-0" style="font-size: 25px; background-color: #add8e6">
+                21
+              </p>
+            </div>
+            <div
+              class="col-md-1 text-center p-0 justify-content-center align-items-center"
+            >
+              <p class="m-0" style="font-size: 25px; background-color: #ffd700">
+                22
+              </p>
+            </div>
+          </div>
+          <div class="row mb-3 d-flex justify-content-between">
+            <div
+              class="col-md-1 text-center p-0 justify-content-center align-items-center"
+            >
+              <p class="m-0" style="font-size: 25px; background-color: #ffd700">
+                23
+              </p>
+            </div>
+            <div
+              class="col-md-1 text-center p-0 justify-content-center align-items-center"
+            >
+              <p class="m-0" style="font-size: 25px; background-color: #add8e6">
+                24
+              </p>
+            </div>
+            <div
+              class="col-md-1 text-center p-0 justify-content-center align-items-center"
+            >
+              <p class="m-0" style="font-size: 25px; background-color: #ffd700">
+                25
+              </p>
+            </div>
+            <div
+              class="col-md-1 text-center p-0 justify-content-center align-items-center"
+            >
+              <p class="m-0" style="font-size: 25px; background-color: #ffd700">
+                26
+              </p>
+            </div>
+            <div
+              class="col-md-1 text-center p-0 justify-content-center align-items-center"
+            >
+              <p class="m-0" style="font-size: 25px; background-color: #add8e6">
+                27
+              </p>
+            </div>
+            <div
+              class="col-md-1 text-center p-0 justify-content-center align-items-center"
+            >
+              <p class="m-0" style="font-size: 25px; background-color: #ffd700">
+                28
+              </p>
+            </div>
+            <div
+              class="col-md-1 text-center p-0 justify-content-center align-items-center"
+            >
+              <p class="m-0" style="font-size: 25px; background-color: #add8e6">
+                29
+              </p>
+            </div>
+            <div
+              class="col-md-1 text-center p-0 justify-content-center align-items-center"
+            >
+              <p class="m-0" style="font-size: 25px; background-color: #ffd700">
+                30
+              </p>
+            </div>
+            <div
+              class="col-md-1 text-center p-0 justify-content-center align-items-center"
+            >
+              <p class="m-0" style="font-size: 25px; background-color: #ffd700">
+                31
+              </p>
+            </div>
+            <div
+              class="col-md-1 text-center p-0 justify-content-center align-items-center"
+            >
+              <p class="m-0" style="font-size: 25px; background-color: #ffd700">
+                32
+              </p>
+            </div>
+            <div
+              class="col-md-1 text-center p-0 justify-content-center align-items-center"
+            >
+              <p class="m-0" style="font-size: 25px; background-color: #ffd700">
+                33
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-3 mt-4 d-flex justify-content-center">
+          <div
+            class="col-md-2 mx-5 text-center p-0 justify-content-center align-items-center"
+          >
+            <p class="m-0" style="font-size: 25px; background-color: #add8e6">
+              Phòng trống
+            </p>
+          </div>
+          <div
+            class="col-md-3 me-5 text-center p-0 justify-content-center align-items-center"
+          >
+            <p class="m-0" style="font-size: 25px; background-color: #ffd700">
+              Phòng có người đặt
+            </p>
+          </div>
+          <div
+            class="col-md-3 text-center p-0 justify-content-center align-items-center"
+          >
+            <div
+              class="m-0 w-75"
+              style="font-size: 25px; background-color: #ffd700"
+            >
+              <select name="" id="" class="w-100">
+                <option value="">Chọn phòng</option>
+                <option value="">1</option>
+                <option value="">2</option>
+                <option value="">3</option>
+                <option value="">4</option>
+              </select>
+            </div>
+          </div>
+          <div
+            class="col-md-3 text-center p-0 justify-content-center align-items-center"
+          >
+            <p class="mt-3 mb-0" style="font-size: 20px">
+              Số Tiền Thanh Toán là 200k
+            </p>
+            <p class="mt-1" style="color: red">
+              (Tài khoản của bạn hiện có: 300k)
+            </p>
+            <button class="mt-2 btn btn-primary" style="font-size: 20px">
+              Xác Nhận
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <hr />
+    <footer class="text-center fw-bold p-4">
+      <img src="https://ap.poly.edu.vn/images/logo.png" width="15%" alt="" />
+      <img src="../img/logo.png" alt="" />
+      <span style="font-size: 20px">RẠP PHIM BETA FPT POLYTECHNIC</span>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/TitlePage.js"></script>
+  </body>
+</html>

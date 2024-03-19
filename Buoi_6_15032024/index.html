@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="libs/angular.min.js"></script>
+    <script src="libs/angular.min.js"></script>
+</head>
+<body ng-app="myapp">
+    <!-- Định nghĩa phạm vi sử dụng Angular JS -->
+    <div class="" ng-controller="demoController">
+    <!-- Định nghĩa ra phạm vi giao diện được điều hướng bởi controller  -->
+    <h1>{{xinChao}}</h1>
+        <table border="1">
+            <tr>
+                <th>Mã</th>
+                <th>Tên</th>
+                <th>Năm sinh</th>
+            </tr>
+            <tr>
+                <td>{{ma}}</td>
+                <td>{{ten}}</td>
+                <td>{{namsinh}}</td>
+            </tr>
+        </table> <br>
+        <!-- Lấy dữ liệu trong đối tượng -->
+        <table border="1">
+            <tr>
+                <th>Mã</th>
+                <th>Tên</th>
+                <th>Năm sinh</th>
+                <th>Tình trạng</th>
+            </tr>
+            <tr>
+                <td>{{sinhvien.ma}}</td>
+                <td>{{sinhvien.ten}}</td>
+                <td>{{sinhvien.namsinh}}</td>
+                <td ng-if="sinhvien.tinhtrang == true && sinhvien.namsinh <= 2004 ">Đủ tuổi lập gia đình</td>
+            </tr>
+        </table><br>
+        <table border="1">
+            <tr>
+                <th>Mã</th>
+                <th>Tên</th>
+                <td>Giá</td>
+                <th>Năm</th>
+                <th>Loại hàng</th>
+            </tr>
+            <tr>
+                <td>{{sanpham.ma}}</td>
+                <td>{{sanpham.ten}}</td>
+                <td>{{sanpham.gia}}</td>
+                <td>{{sanpham.nam}}</td>
+                <td ng-if="sanpham.gia > 1000">Hàng cao cấp</td>
+            </tr>
+        </table><br>
+
+        <table border="1">
+            <tr>
+                <th>Mã</th>
+                <th>Tên</th>
+                <th>Năm sinh</th>
+                <th>Tình trạng</th>
+            </tr>
+            <tr>
+                <td>{{sinhvien.ma}}</td>
+                <td>{{sinhvien.ten}}</td>
+                <td>{{sinhvien.namsinh}}</td>
+                <td>
+                    <span ng-switch="sinhvien.namsinh">
+                        <span ng-switch-when="2004">Ế cấp 1</span>
+                        <span ng-switch-when="2003">Ế cấp 2</span>
+                        <span ng-switch-when="2002">Ế cấp 3</span>
+                        <span ng-switch-when="2001">Ế cấp 4</span>
+                        <span ng-switch-when="2000">Ế cấp vĩnh viễn</span>
+                    </span>
+                </td>
+            </tr>
+        </table><br>
+        <!-- <span ng-switch="sinhvien.namsinh">
+            <span ng-switch-when="2004">Ế cấp 1</span>
+            <span ng-switch-when="2003">Ế cấp 2</span>
+            <span ng-switch-when="2002">Ế cấp 3</span>
+            <span ng-switch-when="2001">Ế cấp 4</span>
+            <span ng-switch-when="2000">Ế cấp vĩnh viễn</span>
+        </span> -->
+        <table border="1">
+            <tr>
+                <th>Mã</th>
+                <th>Tên</th>
+                <th>Năm sinh</th>
+                <th>Tình trạng</th>
+            </tr>
+            <tr ng-repeat="sinhvien in sv">
+                <td>{{sinhvien.ma}}</td>
+                <td>{{sinhvien.ten}}</td>
+                <td>{{sinhvien.namsinh}}</td>
+                <td>
+                    <span ng-switch="sinhvien.namsinh">
+                        <span ng-switch-when="2004">Ế cấp 1</span>
+                        <span ng-switch-when="2003">Ế cấp 2</span>
+                        <span ng-switch-when="2002">Ế cấp 3</span>
+                        <span ng-switch-when="2001">Ế cấp 4</span>
+                        <span ng-switch-when="2000">Ế cấp vĩnh viễn</span>
+                    </span>
+                </td>
+            </tr>
+        </table><br>
+    </div>
+<script src="app.js">
+    
+</script>    
+</body>
+</html>

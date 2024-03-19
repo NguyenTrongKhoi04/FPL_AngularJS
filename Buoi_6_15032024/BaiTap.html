@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="libs/angular.min.js"></script>
+  </head>
+  <body ng-app="myapp" ng-controller="myCtrl">
+    <table border="1">
+      <tr>
+        <th>Tên</th>
+        <th>sđt</th>
+        <th>cmt</th>
+        <th>tuổi</th>
+        <th>dknv</th>
+      </tr>
+      <tr ng-repeat="sinhvien in persons">
+        <td>{{sinhvien.name}}</td>
+        <td>{{sinhvien.phone}}</td>
+        <td>{{sinhvien.cmt}}</td>
+        <td>{{ getAge(sinhvien.birthYear) }}</td>
+        <td ng-if="getAge(sinhvien.birthYear) >= 19 && sinhvien.gender == 1 ">
+          Đủ điều kiện đi nghĩa vụ
+        </td>
+      </tr>
+    </table>
+    <br />
+    <script src="BaiTap.js"></script>
+  </body>
+</html>

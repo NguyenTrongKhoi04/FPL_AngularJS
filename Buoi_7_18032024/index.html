@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="ctrl">
+        <form>
+            <input type="text" ng-model="input.name">
+            <!-- trong ng-model thì name là 1 thuộc tính của input -->
+            <!-- <h2>Bạn đã nhập {{name}}</h2> -->
+            <br>
+            <label for="">Chọn giới tính</label>
+            <input type="radio" ng-model="input.gender" value="1">Nam
+            <input type="radio" ng-model="input.gender" value="2">Nữ
+            <br>
+            <label>Danh sách lựa chọn</label>
+            <input type="checkbox" ng-model="input.list.all">All
+            <input type="checkbox" ng-model="input.list.a" ng-checked="input.list.all">lựa chọn 1
+            <input type="checkbox" ng-model="input.list.b" ng-checked="input.list.all">lựa chọn 2
+            <input type="checkbox" ng-model="input.list.c" ng-checked="input.list.all">lựa chọn 3
+            <br>
+            <select ng-model="input.select">
+                <option value="1">Áo 1</option>
+                <option value="2">Áo 2</option>
+                <option value="3">Áo 3</option>
+            </select>
+            <br>
+            <label for="">Danh mục sản phẩm</label>
+            <select ng-model="danhmuc2">
+                <option ng-repeat="dm in list" value="{{dm.id}}">{{dm.name}}</option>
+            </select>
+            <br>
+
+            <!-- Trả về 1 cục đối tượng -->
+            <label for="">Danh mục sản phẩm</label>
+            <select ng-model="danhmuc3" ng-options="dm.name for dm in list"></select>
+            <br>
+            <button ng-click="submit()">Gửi </button>
+        </form>
+    </div>
+    
+    <script>
+        var app = angular.module("myApp",[]).controller('ctrl',function($scope){
+            // $scope.name = "Khôi";
+            $scope.input = {
+                list: {
+                    all: false,
+                    a: false,
+                    b: false,
+                    c: false
+                }
+            }
+
+            $scope.input.select = "2" // mặc định chọn input
+            $scope.input.danhhmuc3 = "3" // mặc định chọn input
+            $scope.list = [
+                {id: "1",name: "Túi xách nam"},
+                {id: "2",name: "Bia"},
+                {id: "3",name: "Coca"},
+            ];
+
+            $scope.submit = function(){
+                console.log($scope.input.name);
+                // console.log($scope.input);
+                console.log($scope.input.gender);
+                console.log($scope.input.list);
+                console.log($scope.input.select);
+                console.log($scope.danhmuc2);
+                console.log($scope.danhmuc3);
+            };
+        }); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#navbarNav>ul {
+    font-size: 1.7rem;
+}
+
+#login-web {
+    font-size: 1.7rem;
+    margin-top: -8px;
+}
+
+body, .navbar-nav .nav-link {
+    font-family: "Open Sans", sans-serif;
+}

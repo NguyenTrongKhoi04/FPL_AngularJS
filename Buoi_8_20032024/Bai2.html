@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="ctrl">
+        <img src="{{student.image}}" alt="" />
+        <ul>
+            <li>Họ và tên: {{student.name}}</li>
+            <li>Ngày sinh: {{student.ngaysinh}}</li>
+            <li>Giới tính: {{student.gender}}</li>
+            <li>Điểm trung bình: {{student.dtb}}</li>
+        </ul>
+    </div>
+    
+    <script>
+        var app = angular.module("myApp",[]).controller('ctrl',function($scope){
+            $scope.student = {
+            name: "Nguyễn Văn Tèo",
+            ngaysinh: "20-01-1995",
+            gender: "Nam",
+            image: "image.png",
+            dtb: "8.5",
+            };
+        }); 
+    </script>
+</body>
+</html>

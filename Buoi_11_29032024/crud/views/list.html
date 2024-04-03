@@ -1,0 +1,25 @@
+<h1>{{hi}}</h1>
+<table>
+  <thead>
+    <tr>
+      <th>STT</th>
+      <th>Name</th>
+      <th>Tuoi</th>
+      <th>Dia chi</th>
+      <th>SĐT</th>
+    </tr>
+  </thead>
+  <tbody ng-repeat="pro in product">
+    <tr>
+      <td>{{ $index + 1}}</td>
+      <td>{{ pro.name }}</td>
+      <td>{{ pro.tuoi }}</td>
+      <td>{{ pro.diachi }}</td>
+      <td>{{ pro.sdt }}</td>
+      <td>
+        <button ng-click="delete(pro.id)">Xóa</button>
+        <button ng-click="update(pro.id)">sửa</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

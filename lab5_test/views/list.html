@@ -1,0 +1,40 @@
+<div class="w-100">
+  <h2>List sản phẩm</h2>
+</div>
+<div class="bg-white p-4">
+  <button class="btn btn-primary mb-3">
+    <a href="#!/add" style="color: white">Thêm mới sản phẩm</a>
+  </button>
+  <table class="table" ng-controller="myController">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Office</th>
+        <th scope="col">Age</th>
+        <th scope="col">Startdate</th>
+        <th scope="col">Salary</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="data in datas">
+        <td class="p-3">{{data.name}}</td>
+        <td class="p-3">{{data.office}}</td>
+        <td class="p-3">{{data.age}}</td>
+        <td class="p-3">{{data.startdate}}</td>
+        <td class="p-3">{{data.salary}}</td>
+        <td ng-switch="data.status" class="text-light">
+          <p ng-switch-when="Pending" class="bg-danger d-inline p-1 rounded">
+            Pending
+          </p>
+          <p ng-switch-when="Pendingw" class="bg-success d-inline p-1 rounded">
+            Pending
+          </p>
+          <p ng-switch-when="Pendings" class="bg-warning d-inline p-1 rounded">
+            Pending
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Table - 5 rows</p>
+</div>

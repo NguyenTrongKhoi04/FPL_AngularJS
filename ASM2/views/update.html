@@ -1,0 +1,45 @@
+<div class="w-100">
+  <h2>Thêm mới</h2>
+</div>
+<div class="bg-white p-4 w-50 mx-auto">
+  <form>
+    <label for="" class="mt-3">Nhập Name</label>
+    <input type="text" class="form-control" ng-model="inputValue.name" />
+    <div ng-show="checkData.name == true" class="mb-3" style="color: red">
+      Vui lòng nhập tên
+    </div>
+
+    <label for="" class="mt-3">Nhập thời gian học (phút)</label>
+    <input type="text" class="form-control" ng-model="inputValue.time" />
+    <div ng-show="checkData.time == true" class="mb-3" style="color: red">
+      Vui lòng nhập thời gian học
+    </div>
+
+    <label for="" class="mt-3">Nhập chuyên nghành</label>
+    <input type="text" class="form-control" ng-model="inputValue.major" />
+    <div ng-show="checkData.major == true" class="mb-3" style="color: red">
+      Vui lòng nhập chuyên nghành
+    </div>
+
+    <label for="" class="mt-3">Nhập level</label>
+    <input type="text" class="form-control" ng-model="inputValue.level" />
+    <div ng-show="checkData.level == true" class="mb-3" style="color: red">
+      Vui lòng nhập level khóa học
+    </div>
+
+    <label for="" class="mt-3">Nhập link ảnh</label>
+    <input type="text" class="form-control" ng-model="inputValue.image" />
+    <img src="{{inputValue.image}}" width="80px" alt="" />
+    <div ng-show="checkData.image == true" class="mb-3" style="color: red">
+      Vui lòng nhập link ảnh
+    </div>
+
+    <label for="" class="mt-3">Nhập Giá</label>
+    <input type="text" class="form-control" ng-model="inputValue.price" />
+    <div ng-show="checkData.price == true" class="mb-3" style="color: red">
+      Vui lòng nhập Giá
+    </div>
+
+    <button class="btn btn-primary" ng-click="onSubmit()">update</button>
+  </form>
+</div>

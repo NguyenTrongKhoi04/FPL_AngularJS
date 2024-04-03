@@ -1,0 +1,15 @@
+<form>
+  <input type="text" name="" ng-model="inputValidate.name" />
+  <div ng-show="Validate.name == true" style="color: red">
+    Vui lòng nhập tên
+  </div>
+  <br />
+
+  <input type="text" name="" ng-model="inputValidate.price" />
+  <div ng-show="Validate.price == true" style="color: red">
+    Vui lòng nhập giá
+  </div>
+  <br />
+
+  <button ng-click="onSubmit()">Thêm</button>
+</form>

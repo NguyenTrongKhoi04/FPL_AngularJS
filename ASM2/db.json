@@ -1,0 +1,22 @@
+{
+  "products": [
+    {
+      "id": "0",
+      "name": "Product 3",
+      "time": "280p",
+      "major": "Web Design",
+      "level": "Beginner",
+      "image": "https://i.pinimg.com/564x/06/63/99/066399ec6b9d35460ef1e329d36b5e38.jpg",
+      "price": 100
+    },
+    {
+      "id": "347d",
+      "name": "test",
+      "time": "345",
+      "major": "web",
+      "level": "beginner",
+      "image": "https://i.pinimg.com/564x/06/63/99/066399ec6b9d35460ef1e329d36b5e38.jpg",
+      "price": "50"
+    }
+  ]
+}

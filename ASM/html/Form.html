@@ -12,7 +12,7 @@
     href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
     rel="stylesheet"
     />
-    <title ng-controller="myCtrl">{{ XacNhan }}</title>
+    <title ng-controller="myCtrl">{{ Home }}</title>
   </head>
   <body class="p-0 m-0 border-0 bd-example border-0">
     <!-- header -->
@@ -60,16 +60,18 @@
     
     <!-- slideshow -->
     <div class="container-fluid p-0 w-50 bg-gray-200 w-">
-        <div class="my-5 max-w-7xl mx-auto text-center">
-            <h2 class="text-uppercase" style="color: red;">Xác Nhận Thông Tin</h2>
+        <div class="my-3 max-w-7xl mx-auto text-center">
+            <h3>Xác Nhận Thông Tin</h3>
         </div>
         <div class="row">
-            <label for="" class="fw-bold">Nhập họ tên</label><input class="form-control mb-3" placeholder="họ tên*" type="text">
-            <label for="" class="fw-bold">Nhập email</label><input class="form-control mb-3" placeholder="email*" type="text">
-            <label for="" class="fw-bold">Nhập số điện thoại</label><input class="form-control mb-3" placeholder="số điện thoại*" type="text">
-            <label for="" class="fw-bold">Nhập ngày sinh</label><input class="form-control mb-3" placeholder="ngày sinh*" type="date">
-            <label for="" class="fw-bold">Nhập chứng minh nhân dân</label><input class="form-control mb-3" placeholder="CMND*" type="number">
-           <div class="form-group" >
+            <label for="" class="fw-bold">Nhập họ tên</label><input class="form-control mb-2" placeholder="họ tên*" type="text">
+            <label for="" class="fw-bold">Nhập email</label><input class="form-control mb-2" placeholder="email*" type="text">
+            <label for="" class="fw-bold">Nhập số điện thoại</label><input class="form-control mb-2" placeholder="số điện thoại*" type="text">
+            <label for="" class="fw-bold">Nhập ngày sinh</label><input class="form-control mb-2" placeholder="ngày sinh*" type="date">
+            <label for="" class="fw-bold">Nhập chứng minh nhân dân</label><input class="form-control mb-2" placeholder="CMND*" type="number">
+          
+            <label for="" class="fw-bold">Nhập chứng minh nhân dân</label><input class="form-control mb-2" placeholder="CMND*" type="number">
+            <div class="form-group" >
                 <label class="fw-bold">Giới tính</label>
                 <div class="form-check">
                   <input type="radio" class="form-check-input border border-dark" id="femaleRadio" name="gender" value="Nữ">
@@ -80,13 +82,13 @@
                   <label class="form-check-label" for="maleRadio">Nam</label>
                 </div>
               </div>
-              <label for="" class="fw-bold mt-3">Tên khóa học</label>
-              <select name="" id="" class="mb-3" style=" border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 3px;">
+              <label for="" class="fw-bold">Tên khóa học</label>
+              <select name="" id="" class="mb-2" style=" border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 3px;">
                   <option value="">MASTER JS</option>
                   <option value="">HTMl</option>
                   <option value="">CSS3</option>
               </select>
-              <label for="" class="fw-bold">Số tiền thanh toán</label><input class="form-control mb-3" value="300000" type="number">
+              <label for="" class="fw-bold">Số tiền thanh toán</label><input class="form-control mb-2" value="300000" type="number">
             <button class="btn btn-primary w-25 mx-auto mt-3">Xác Nhận</button>
         </div>
     </div>

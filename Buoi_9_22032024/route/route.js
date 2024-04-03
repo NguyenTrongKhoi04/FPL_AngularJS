@@ -1,6 +1,6 @@
 angular.module("myRoute", ['ngRoute']).config( function ($routeProvider){
     $routeProvider
-      .when("/trang_chu", {
+      .when("/", {
         templateUrl: "view/home.html",
       })
       .when("/list", {

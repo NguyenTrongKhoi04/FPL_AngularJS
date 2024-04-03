@@ -1,0 +1,17 @@
+<form action="">
+
+    <div class="mb-3">
+        <label for="">Tên</label>
+        <input type="text" ng-model="inputValue.name" class="form-control">
+        <span class="text-danger" ng-show="checkData.name == true">Vui lòng nhập</span>
+    </div>
+
+    <div class="mb-3">
+        <label for="">Giá</label>
+        <input type="text" ng-model="inputValue.price" class="form-control">
+        <span class="text-danger" ng-show="checkData.price == true">Vui lòng nhập</span>
+    </div>
+
+    <button ng-click="onSubmit()" class="btn btn-dark">Sửa</button>
+
+</form>

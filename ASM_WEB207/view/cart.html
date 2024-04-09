@@ -1,0 +1,206 @@
+<div>
+    <div class="row d-flex mt-5 border rounded-1 p-1 bg-secondary-subtle">
+        <h3 class="text-center">Giỏ hàng</h3>
+    </div>
+    <!--Cột kèm nút chọn tất cả-->
+    <div class="row d-flex mt-5 border rounded-1 p-3 justify-content-between ">
+        <div class="col-6 d-flex align-items-center">
+            <div class="col-2 d-flex align-items-center ml-auto">
+                <input class="SelectAllSP" type="checkbox" name="" title="Chọn tất cả sản phẩm" ng-click="">
+            </div>
+            <div class="col-2 mw-100">Sản Phẩm</div>
+            <div class="col-2 m-auto">Mô tả</div>
+        </div>
+        <div class="col-6 d-flex justify-content-between">
+            <div class="col-2">Đơn Giá</div>
+            <div class="col-2">Số Lượng</div>
+            <div class="col-2">Thành Tiền</div>
+            <div class="col-2">Thao Tác</div>
+        </div>
+    </div>
+
+    <!--Sản phẩm -->
+    <div class="product row d-flex mt-3 border rounded-1 p-3 justify-content-between"
+        ng-repeat="(index ,value ) in productMap">
+        <div class="col-6 d-flex align-items-center">
+            <div class="col-2 d-flex align-items-center ml-auto">
+                <input class="SelectSP" type="checkbox" ng-click="ChoosePro(value.id , $event.target.checked)"
+                    ng-model="productMap[index].isSelected" title="Chọn mua sản phẩm">
+            </div>
+            <div class="col-2 mw-100">
+                <div class="ratio ratio-1x1">
+                    <div class="bg-light"><!-- ảnh sản phẩm -->
+                        <img ng-src="{{value.urlImg}}" class="mw-100 mh-100 rounded">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 text-center m-auto ">
+                <a href="" class="text-dark-emphasis" style="text-decoration: none;"
+                    title="{{value.namePro}}">{{value.namePro}}</a>
+            </div>
+        </div>
+        <div class="col-6 d-flex justify-content-between align-items-center m-auto">
+            <div class="col-2 ">
+                <span class="text-warning text-sm-center">{{value.costPro * (value.sale/100) |
+                    currency : '₫' : 0 }}₫</span>
+                <span class="text-decoration-line-through text-sm-center">{{value.costPro | currency:'': 0 }}₫</span>
+            </div>
+
+            <div class="col-2 d-flex flex-row gap-2 align-items-center">
+                <button class="btn btn-warning btn-sm" ng-click="">
+                    +
+                </button><!-- tăng sp vào giỏ hàng dựa vào id -->
+                <span> {{getProductCountById(value.id)}} </span><!-- SL = idSP trog HĐ -->
+                <button class="btn btn-warning btn-sm"
+                    ng-click="prodDiscount(value.id , productMap[index].isSelected)"><!-- idPro && value ô checkbox (true/false) -->
+                    -
+                </button><!-- giảm sl trog giỏ hàng -->
+            </div>
+
+            <div class="col-2" id="thanhtienColum">
+                {{ value.costPro * (value.sale / 100) * getProductCountById(value.id) | currency : '₫' : 0 }}₫
+            </div>
+            <div class="col-2">
+                <a class="btn btn-danger" id="deleted_sp"
+                    ng-click="removeToCart(value.id , productMap[index].isSelected  )"><!-- xóa Pro có () giỏ hàng dựa vào ID -->
+                    Xóa
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!--Khu vực form -->
+    <div class="row mt-2 border rounded-1 p-3">
+        <div class="col-7 mw-100">
+            <!--Điền thông tin cần thiết-->
+            <div class="container border rounded-1 p-3 ">
+                <div class="row justify-content-start">
+                    <div class="col-md-6" style="width: 100%;">
+                        <form>
+                            <div class="form-group">
+                                <label for="maDonHang">Mã đơn hàng:</label>
+                                <input ng-model="in4.idHD" type="text" class="form-control" id="maDonHang"
+                                    placeholder="Mã đơn hàng" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="fullName">Tên người nhận hàng:</label><!-- tenNguoiDung -->
+                                <input type="text" class="form-control" id="fullName" ng-model="in4.tenNguoiDung"
+                                    placeholder="Nhập tên người nhận" autocomplete="off" ng-change="">
+                                <span class="error-message" ng-show="showError.fullName"
+                                    ng-bind="ContentError.fullName">
+                                </span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Số điện thoại:</label>
+                                <input type="text" class="form-control" id="phone" placeholder="Nhập số điện thoại"
+                                    ng-model="in4.soDienThoai" maxlength="10" autocomplete="off"><!-- SĐT -->
+                                <span class="error-message" ng-show="showError.phoneNumber"
+                                    ng-bind="ContentError.phoneNumber">
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Địa chỉ:</label><!-- Địa chỉ  -->
+                                <textarea class="form-control" id="address" rows="3" ng-model="in4.diaChi"
+                                    placeholder="Nhập địa chỉ nhận hàng" autocomplete="off"></textarea>
+                                <span class="error-message" ng-show="showError.address" ng-bind="ContentError.address">
+                                </span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="fullName">Đơn vị vận chuyển</label>
+                                <select class="form-control" ng-model="in4.dichVuVanChuyen"><!-- dichVuVanChuyen-->
+                                    <option value="VNExpress">VNExpress </option>
+                                    <option value="GHTK">GHTK </option>
+                                    <option value="GHN">GHN </option>
+                                    <option value="Viettel Post"> Viettel Post</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="idd">Ngày đặt hàng</label><!-- ngày đặt hàng  -->
+                                <input class="form-control" ng-model="in4.ngayDatHang" type="datetime" disabled />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-5 mw-100">
+            <!--Điền thông tin cần thiết-->
+            <div class="container border rounded-1 p-3 ">
+                <div class="row justify-content-start">
+                    <div class="col-md-6" style="width: 100%;">
+                        <form>
+                            <div class="form-group">
+                                <label for="fullName">Hình thức thanh toán</label><!--hinhThucThanhToan -->
+                                <select class="form-control" ng-model="in4.hinhThucThanhToan" name="paymentMethod">
+                                    <option value="Thanh toán khi nhận hàng">Thanh toán khi nhận hàng</option>
+                                    <option value="Thẻ Tín Dụng (Credit) ">Thẻ Tín Dụng (Credit) </option>
+                                    <option value="Thẻ Ngân Hàng (Visa) ">Thẻ Ngân Hàng (Visa) </option>
+                                    <option value="Ví Điện Tử">Ví Điện Tử</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Tổng số sản phẩm</label><!-- tổng SL spro -->
+                                <span class="form-control bg-body-tertiary"
+                                    style="height: 39px; background-color: #e9ecef;" rows="3">
+                                    {{in4.tongSoLuongSanPham}}
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Tổng tiền sản phẩm</label><!-- tổng tiền -->
+                                <span class="form-control bg-body-tertiary"
+                                    style="height: 39px; background-color: #e9ecef;" rows="3">
+                                    {{in4.tongTienSanPham | currency : ' ' : 0}}VNĐ
+                                </span>
+                                <span class="error-message" ng-show="showError.tongTienSP"
+                                    ng-bind="ContentError.tongTienSP">
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Phí vận chuyển</label><!-- Tổng phí vẫn chuyển -->
+                                <span class="form-control bg-body-tertiary"
+                                    style="height: 39px; background-color: #e9ecef;" rows="3">
+                                    {{in4.phiShip | currency : ' ' : 0}}VNĐ
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Tổng thanh toán</label><!-- Tổng tiền tất cả sản phẩm -->
+                                <span class="form-control bg-body-tertiary"
+                                    style="height: 39px; background-color: #e9ecef;" rows="3">
+                                    {{in4.tongThanhToan | currency : ' ' : 0}}VNĐ
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-grid mt-2" style="border-top: 1px dashed rgba(0,0,0,.09); ">
+            <a ng-click="order()" type="button" class="mt-2 btn btn-danger btn-block">ĐẶT HÀNG</a>
+        </div>
+    </div>
+</div>
+
+
+<div class="row fixed-bottom  " style="backdrop-filter: blur(5px) ;background-color: rgba(0, 0, 0, 0.5) ">
+    <div class="col-12 container d-flex align-items-center justify-content-end">
+        <div class=" row d-flex container-fluid ">
+            <div class="col-8  d-flex flex-row justify-content-start ">
+                <p class="text-light text-decoration-none "
+                    style="font-size: x-large; font-family: 'Times New Roman', Times, serif;">Tổng
+                    tiên sản phẩm: {{total | currency:'': 0 }} ₫
+                </p>
+                <label class="fw-semibold ms-3" style="font-family:  sans-serif; color: #fff67b; font-size: x-large;">
+                    VND</label>
+            </div>
+            <div class="col-4 d-flex justify-content-end align-items-center ">
+                <!-- Thực hiện đặt hàng -->
+                <a ng-click="order()" class="btn btn-success">
+                    ĐẶT HÀNG
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="/css/cart.css"><!-- gắn css cho cart -->

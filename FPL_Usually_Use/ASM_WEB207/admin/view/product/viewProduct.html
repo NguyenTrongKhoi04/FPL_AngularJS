@@ -1,0 +1,42 @@
+<div class="p-4" style="min-height: 800px;">
+    <h4 class="text-primary mb-4">Thông tin sản phẩm</h4>
+    <div>
+        <div class="card mb-3" style="max-width: 900px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img ng-src=" {{dataPro.urlImg}} " class="img-fluid rounded-start w-100 h-100" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h3 class="card-title">{{ dataPro.namePro }}</h3>
+                        <p class="card-text align-items-center ">Giá gốc: <span class="badge text-bg-danger">{{
+                                dataPro.costPro | currency:'': 0}}VNĐ</span> </p>
+
+                        <p class="card-text">Số lượng: <span class="badge text-bg-success">{{ dataPro.quantity }}
+                                chiếc</span> </p>
+
+                        <p class="card-text">Sale: <span class="badge text-bg-warning">{{ dataPro.sale }}%</span> </p>
+
+                        <p class="card-text">Giá Bán: <span class="badge text-bg-danger"> {{ dataPro.costPro *
+                                (dataPro.sale/100) |currency : '' : 0 }}VNĐ</span></p>
+
+                        <p class="card-text">Xuất xứ: <span class="badge text-bg-primary">{{ dataPro.origin }}</span>
+                        </p>
+
+                        <p class="card-text">Trạng thái: <span class="badge text-bg-warning"> {{ dataPro.status }}
+                            </span>
+                        </p>
+                        <p class="card-text">Mô tả: <span class="badge text-bg-secondary"> {{ dataPro.describe}}</span>
+                        </p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <a href="#!/" class="btn btn-warning float-start">Quay lại trang</a>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="css/productCSS/addProduct.css">

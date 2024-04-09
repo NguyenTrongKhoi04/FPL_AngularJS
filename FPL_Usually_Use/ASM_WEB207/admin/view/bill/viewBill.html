@@ -1,0 +1,137 @@
+<!--Khu vực form -->
+<div class="p-4">
+    <div class="d-flex flex-row gap-4 align-items-center mb-3">
+        <a href="#!listBill"><i class="fa-solid fa-arrow-left"></i></a>
+        <h4 class="text-primary ">Hóa Đơn Chi Tiết</h4>
+    </div>
+    <table class="table mt-3">
+        <thead>
+            <tr>
+                <th scope="col">STT</th>
+                <th scope="col">ID</th>
+                <th scope="col">Tên Sản Phẩm</th>
+                <th scope="col">Giá Bán</th><!-- Giá gốc * sale -->
+                <th scope="col">Số Lượng</th><!--  -->
+                <th scope="col">Tổng Tiền</th><!-- Giá bán * SL  -->
+                <th scope="col">Ngày Tạo</th>
+                <th scope="col">Người Tạo</th>
+            </tr>
+        </thead>
+        <!-- Do lúc lặp bên JS chưa chạy xog. nên cần chạy lại sau vài dây -->
+        <tbody ng-if="showData" ng-repeat=" (index,value) in listProductUserBuy  ">
+            <!-- lặp lại in4-pro-->
+            <tr>
+                <td> {{index + 1}} </td> <!-- STT -->
+                <td> {{value.id}} </td> <!-- ID -->
+                <td> {{value.namePro}} </td> <!-- Tên Sản Phẩm -->
+                <td> {{value.costPro * (value.sale/100) |currency : '' : 0 }}₫</td> <!-- Giá Bán = Giá gốc * sale -->
+                <td> {{ listIDProd[value.id] }} </td><!-- SL -->
+                <td> {{ listIDProd[value.id] * (value.costPro * (value.sale/100)) |currency : '' : 0 }}₫</td>
+                <td> {{value.createAt}} </td> <!-- Người Tạo -->
+                <td> {{value.createBy}} </td> <!-- Ngày Tạo -->
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="row mt-2 border rounded-1 p-3">
+    <div class="col-7 mw-100">
+        <!--Điền thông tin cần thiết-->
+        <div class="container border rounded-1 p-3 ">
+            <div class="row justify-content-start">
+                <div class="col-md-6" style="width: 100%;">
+                    <form>
+                        <div class="form-group">
+                            <label for="maDonHang">Mã đơn hàng:</label>
+                            <input ng-model="in4.idHD" type="text" class="form-control" id="maDonHang"
+                                placeholder="Mã đơn hàng" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Trạng Thái Đơn Hàng: </label>
+                            <select class="form-select" disabled><!-- Trạng Thái Đơn Hàng-->
+                                <option value="Chờ Thanh Toán">Chờ Thanh Toán</option>
+                                <option value="Hủy">Hủy </option>
+                                <option value="Thanh Toán Thành Công">Thanh Toán Thành Công </option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="fullName">Tên người nhận hàng:</label><!-- tenNguoiDung -->
+                            <input type="text" class="form-control" ng-model="in4.tenNguoiDung" disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Số điện thoại:</label>
+                            <input type="text" class="form-control" id="phone" ng-model="in4.soDienThoai"
+                                disabled><!-- SĐT -->
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Địa chỉ:</label><!-- Địa chỉ  -->
+                            <textarea class="form-control" rows="3" ng-model="in4.diaChi" disabled></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fullName">Đơn vị vận chuyển</label>
+                            <select class="form-control" ng-model="in4.dichVuVanChuyen" disabled><!-- dichVuVanChuyen-->
+                                <option value="VNExpress">VNExpress </option>
+                                <option value="GHTK">GHTK </option>
+                                <option value="GHN">GHN </option>
+                                <option value="Viettel Post"> Viettel Post</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="idd">Ngày đặt hàng</label><!-- ngày đặt hàng  -->
+                            <input class="form-control" ng-model="in4.ngayDatHang" type="datetime" disabled />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-5 mw-100">
+        <!--Điền thông tin cần thiết-->
+        <div class="container border rounded-1 p-3 ">
+            <div class="row justify-content-start">
+                <div class="col-md-6" style="width: 100%;">
+                    <form>
+                        <div class="form-group">
+                            <label for="fullName">Hình thức thanh toán</label><!--hinhThucThanhToan -->
+                            <select class="form-control" ng-model="in4.hinhThucThanhToan" disabled>
+                                <option value="Thanh toán khi nhận hàng">Thanh toán khi nhận hàng</option>
+                                <option value="Thẻ Tín Dụng (Credit) ">Thẻ Tín Dụng (Credit) </option>
+                                <option value="Thẻ Ngân Hàng (Visa) ">Thẻ Ngân Hàng (Visa) </option>
+                                <option value="Ví Điện Tử">Ví Điện Tử</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Tổng số sản phẩm</label><!-- tổng SL spro -->
+                            <span class="form-control bg-body-tertiary" style="height: 39px; background-color: #e9ecef;"
+                                rows="3">
+                                {{in4.tongSoLuongSanPham}}
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Tổng tiền sản phẩm</label><!-- tổng tiền -->
+                            <span class="form-control bg-body-tertiary" style="height: 39px; background-color: #e9ecef;"
+                                rows="3">
+                                {{in4.tongTienSanPham | currency : ' ' : 0}}VNĐ
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Phí vận chuyển</label><!-- Tổng phí vẫn chuyển -->
+                            <span class="form-control bg-body-tertiary" style="height: 39px; background-color: #e9ecef;"
+                                rows="3">
+                                {{in4.phiShip | currency : ' ' : 0}}VNĐ
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Tổng thanh toán</label><!-- Tổng tiền tất cả sản phẩm -->
+                            <span class="form-control bg-body-tertiary" style="height: 39px; background-color: #e9ecef;"
+                                rows="3">
+                                {{in4.tongThanhToan | currency : ' ' : 0}}VNĐ
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

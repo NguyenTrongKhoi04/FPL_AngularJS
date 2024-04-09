@@ -1,0 +1,77 @@
+/* 1. CSS cho footer */
+.footer {
+    background: #ebe6e6;
+    padding: 30px;
+}
+
+/* 1. CSS cho tiêu đề "Hệ thống cửa hàng"  */
+.row .col-4 .title {
+    color: #c69a39;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-style: 16px;
+    padding: 7px 0;
+}
+
+/* 2. CSS cho "Hà Nội" */
+.address-group>.address-group-title>span {
+    font-style: 13px;
+    color: #333;
+    font-weight: 700;
+    padding-bottom: 5px;
+}
+
+/* 1. CSS cho địa chỉ cụ thể */
+address {
+    display: block;
+    font-style: normal;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* 2. CSS cho "Số Điện thoại" */
+.address-group-item p {
+    padding: 0;
+    margin-bottom: 5px;
+}
+
+/* 1. CSS cho đường dẫn a */
+.address-group .address-group-main .address-group-item address a {
+    text-decoration: none;
+    color: #c69a39;
+    margin-left: 5px;
+    padding-left: 5px;
+    border-left: 1px solid #c69a39;
+}
+
+
+/* 1. CSS "Quy định chính sách */
+.footer-top-content .footer-list {
+    list-style: circle;
+}
+
+/* 2. CSS cho chữ trong danh sách */
+.footer-top-content .footer-list li a {
+    text-decoration: none;
+    font-size: 15px;
+    padding: 8px 0px;
+    display: inline-block;
+    color: black;
+}
+
+/* 1. CSS cho Liên Hệ */
+.connect-content .connect-content-item a {
+    text-decoration: none;
+    margin-top: 5px;
+    display: inline-flex;
+    align-items: center;
+
+}
+
+.connect-content .connect-content-item a span {
+    color: #000;
+    font-size: 14px;
+    text-transform: capitalize;
+    display: block;
+    margin: 3px 0 0 5px;
+}

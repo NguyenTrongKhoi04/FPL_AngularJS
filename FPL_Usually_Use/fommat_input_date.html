@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS Date Input</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+
+<div ng-controller="myApp">
+    <input type="text" ng-model="dateInput" ng-keypress="formatDate($event)" maxlength="10">
+</div>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myApp', function ($scope) {
+        $scope.formatDate = function (event) {
+            var key = event.keyCode || event.which;
+            var dateInput = $scope.dateInput;
+            if ((key >= 48 && key <= 57) || (key >= 96 && key <= 105)) {
+                if (dateInput.length === 2 || dateInput.length === 5) {
+                    $scope.dateInput += '/';
+                }
+            } else if (key === 8) {
+                if (dateInput.length === 4 || dateInput.length === 7) {
+                    $scope.dateInput = dateInput.slice(0, -1);
+                }
+            } else {
+                event.preventDefault();
+            }
+        };
+    });
+</script>
+
+</body>
+</html>

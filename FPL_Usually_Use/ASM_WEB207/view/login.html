@@ -1,0 +1,33 @@
+<div class="container mb-5 pt-3 p-0">
+    <div class="roles">
+        <span>Đăng nhập</span>
+    </div>
+    <div class="wrapper">
+        <div class=" content">
+            <h1>MobilePhone</h1>
+            <form>
+                <div class="wrapp_inp">
+                    <input type="text" class="form-control" ng-model="data.username" ng-keyup=""
+                        placeholder="Tên đăng nhập/Email/Số điện thoại">
+                    <span class="error-message" ng-show="check.checkUserName"
+                        ng-bind="messageValidation.message_username"></span>
+                </div>
+                <!--  -->
+                <div class="wrapp_inp">
+                    <input type="password" class="form-control" ng-model="data.password" ng-keyup=""
+                        placeholder="Mật khẩu">
+                    <span class="error-message" ng-show="check.checkPassWord"
+                        ng-bind="messageValidation.message_password"></span>
+                </div>
+            </form>
+            <button class="btn bg-warning" ng-click="login()">
+                ĐĂNG NHẬP
+            </button>
+            <div class="login-bottom">
+                <span>Chưa có tài khoản <a href="#!register"> ( Đăng ký ngay )</a></span>
+                <span><a href="#">Quên mật khẩu?</a></span>
+            </div>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="../css/login.css">

@@ -1,0 +1,25 @@
+<div ng-controller="_asideCtrl">
+    <div class="list-group mt-4">
+        <a href="#!/" class="list-group-item" ng-click="onItemClick(0)" ng-class="{ 'active': selectedTabIndex === 0 }">
+            Quản lý sản phẩm</a>
+        <a href="#!listUser" class="list-group-item" ng-click="onItemClick(1)"
+            ng-class="{ 'active': selectedTabIndex === 1 }">
+            Quản lý người dùng</a>
+        <a href="#!listBill" class="list-group-item " ng-click="onItemClick(2)"
+            ng-class="{ 'active': selectedTabIndex === 2 }">
+            Quản lý hóa đơn</a>
+        <!-- Khi admin login mới hiện 2 cái dưới. Nv thì ko hiện -->
+        <a href="" class="list-group-item  " ng-show="true" ng-click="onItemClick(3)"
+            ng-class="{ 'active': selectedTabIndex === 3 }">
+            Báo cáo</a>
+        <a href="" class="list-group-item  " ng-show="true" ng-click="onItemClick(4)"
+            ng-class="{ 'active': selectedTabIndex === 4 }">
+            Thống kê</a>
+    </div>
+</div>
+
+<style>
+    .list-group-item.active {
+        background-color: #0d6efd;
+    }
+</style>

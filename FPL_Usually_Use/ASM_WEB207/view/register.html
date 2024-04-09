@@ -1,0 +1,50 @@
+<div class="container mb-5 pt-3 p-0">
+    <div class="roles">
+        <span>Đăng Ký</span>
+    </div>
+    <div class="wrapper">
+        <div class=" content">
+            <h1>MobilePhone</h1>
+            <form>
+                <div class="wrapp_inp">
+                    <input ng-model="ARI.fullName" type="text" class="form-control" placeholder="Nhập họ và tên">
+                    <span class="error-message" ng-show="showMessageError.fullName"
+                        ng-bind="messageError.fullName"></span>
+                </div>
+                <div class="wrapp_inp d-flex flex-column">
+                    <input ng-model="ARI.phoneNumber" type="text" maxlength="10" ng-keyup="notANumber()"
+                        class="form-control" placeholder="Nhập số điện thoại">
+                    <label>(*) số điện thoại gồm 10 số bắt đầu bằng số 0.</label>
+                    <span class="error-message" ng-show="showMessageError.phoneNumber"
+                        ng-bind="messageError.phoneNumber"></span>
+                </div>
+                <div class="wrapp_inp d-flex flex-column">
+                    <input ng-model="ARI.email" type="text" class="form-control"
+                        placeholder="Nhập email (không bắt buộc)">
+                    <label>Hóa đơn VAT khi mua hàng sẽ được gửi qua email này</label>
+                    <span class="error-message" ng-show="showMessageError.email" ng-bind="messageError.email"></span>
+                </div>
+                <div class="wrapp_inp d-flex flex-column">
+                    <input ng-model="ARI.password" type="password" class="form-control" placeholder="Nhập mật khẩu">
+                    <label>(*) Mật khẩu tối thiểu 6 ký tự, có ít nhất 1 chữ và 1 số. (VD:12345a)</label>
+                    <span class="error-message" ng-show="showMessageError.password"
+                        ng-bind="messageError.password"></span>
+                </div>
+                <div class="wrapp_inp">
+                    <input ng-model="ARI.re_password" type="password" class="form-control"
+                        placeholder="Nhập lại mật khẩu">
+                    <span class="error-message" ng-show="showMessageError.re_password"
+                        ng-bind="messageError.re_password"></span>
+                </div>
+            </form>
+            <button class="btn bg-warning" ng-click="register()">
+                ĐĂNG KÝ
+            </button>
+            <div class="register-bottom">
+                <span>Bạn đã có tài khoản <a href="#!login"> ( Đăng nhập )</a></span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Dùng chung CSS vs đăng nhập -->
+<link rel="stylesheet" href="../css/register.css">

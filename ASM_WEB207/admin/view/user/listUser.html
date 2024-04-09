@@ -1,0 +1,46 @@
+<div>
+    <div class="p-4" style="min-height: 800px;">
+        <h4 class="text-primary mb-4">Danh sách người dùng</h4>
+        <div class="">
+            <form class="form d-flex flex-row gap-3">
+                <input ng-model="nameUser" type="text" class="form-control" placeholder="Tìm kiếm theo tên">
+                <input ng-model="phoneUser" type="text" class="form-control" placeholder="Tìm kiếm theo SĐT">
+            </form>
+        </div>
+        <table class="table mt-3">
+            <thead>
+                <tr>
+                    <th scope="col">STT</th>
+                    <th scope="col">ID</th>
+                    <th ng-click="sortColumn('fullName')" scope="col">Tên Đăng Nhập</th>
+                    <th scope="col">Email</th>
+                    <th ng-click="sortColumn('phoneNumber')" scope="col">Số Điện Thoại</th>
+                    <th scope="col">Thao Tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- lặp lại in4-pro-->
+                <tr ng-repeat=" (index , value) in listUser
+                | filter : {
+                    fullName : nameUser , 
+                    phoneNumber : phoneUser
+                }
+                ">
+                    <th> {{index}} </th> <!-- STT -->
+                    <th> {{value.id}} </th>
+                    <th> {{value.fullName | uppercase}} </th>
+                    <th> {{value.email }} </th>
+                    <th> {{value.phoneNumber}} </th>
+                    <td>
+                        <a type="button" ng-click="delete( value.id , value.fullName )"
+                            class="btn btn-outline-danger"><ion-icon name="trash-outline"></ion-icon></a>
+                        <a href="#!/updateUser/{{value.id}}" type="button" class="btn btn-outline-warning"><ion-icon
+                                name="create-outline"></ion-icon></a>
+                        <a href="#!/viewUser/{{value.id}}" type="button" class="btn btn-outline-primary"><ion-icon
+                                name="eye"></ion-icon></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

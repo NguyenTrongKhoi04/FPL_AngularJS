@@ -1,0 +1,61 @@
+<div>
+    <div class="p-4" style="min-height: 800px;">
+        <h4 class="text-primary mb-4">Danh sách hóa đơn</h4>
+        <div class="d-flex flex-row gap-3  ">
+            <button class="btn btn-info">
+                <a class="text-decoration-none fs-6 text-black" href="#!addProduct">Thêmmới</a>
+            </button>
+            <form class="form">
+                <input ng-model="idPro" type="text" class="form-control" placeholder="Tìm kiếm theo ID">
+            </form>
+            <select ng-model="sortSalary" class="form-select" aria-label="Default select example"
+                style="max-width: 270px;">
+                <option value="">Sắp xếp theo giá trị hóa đơn</option>
+                <option value="+tongTienSanPham">Tổng giá tăng dần</option><!-- + tăng từ trên xuống dưới -->
+                <option value="-tongTienSanPham">Tổng giá giảm dần</option><!-- - giảm từ trên xuống dưới -->
+            </select>
+        </div>
+        <table class="table mt-3">
+            <thead>
+                <tr>
+                    <th scope="col">STT</th>
+                    <th ng-click="sortColumn('id')" scope="col">ID Hóa Đơn</th>
+                    <th scope="col">Tên Khách Hàng</th>
+                    <th scope="col">Số Điện Thoại</th>
+                    <th scope="col">Số Lượng Sản Phẩm</th>
+                    <th scope="col">Tổng Tiền (chưa gồm phí ship) </th>
+                    <th scope="col">Hình Thức Thanh Toán</th>
+                    <th scope="col">Trạng Thái Hóa Đơn</th>
+                    <th scope="col">Thao Tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- lặp lại in4-pro-->
+                <tr ng-repeat=" (index , value) in data 
+                | orderBy : sortSalary 
+                | filter : {
+                    id : idPro
+                }
+                ">
+                    <th> {{index}} </th> <!-- STT -->
+                    <th> {{value.id}} </th> <!-- ID hóa đơn -->
+                    <th> {{value.tenNguoiDung}} </th><!-- Tên KH -->
+                    <th> {{value.soDienThoai }} </th><!-- SĐT -->
+                    <th> {{value.tongSoLuongSanPham}} </th><!-- Tổng SL SP -->
+                    <th> {{value.tongTienSanPham | currency : '' : 0}} VNĐ </th><!-- Tổng tiền : Có cả phí ship -->
+                    <th> {{value.hinhThucThanhToan}}</th> <!-- Hình Thức thanh toán  -->
+                    <th> {{value.trangThaiHoaDon}}</th> <!-- Trạng thái hóa đơn -->
+
+                    <td>
+                        <a type="button" ng-click="delete( value.id )" class="btn btn-outline-danger"><ion-icon
+                                name="trash-outline"></ion-icon></a>
+                        <a href="#!viewBill/{{value.id}} " type="button" class="btn btn-outline-primary"><ion-icon
+                                name="eye"></ion-icon></a>
+                        <a href="#!updateBill/{{value.id}}" type="button" class="btn btn-outline-warning"><ion-icon
+                                name="create-outline"></ion-icon></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

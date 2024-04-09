@@ -1,0 +1,63 @@
+<div>
+    <div class="p-4" style="min-height: 800px;">
+        <h4 class="text-primary mb-4">Danh sách sản phẩm</h4>
+        <!-- Chuyển đường dẫn sang thêm mới. -->
+        <div class="d-flex flex-row gap-3  ">
+            <button class="btn btn-info">
+                <a class="text-decoration-none fs-6 text-black" href="#!addProduct">Thêmmới</a>
+            </button>
+            <form class="form">
+                <input ng-model="id" type="text" class="form-control" placeholder="Tìm kiếm theo ID">
+            </form>
+            <select ng-model="sortSalary" class="form-select" aria-label="Default select example"
+                style="max-width: 210px;">
+                <option value="">Sắp xếp theo giá gốc</option>
+                <option value="+costPro">Giá giảm dần</option><!-- + tăng từ trên xuống dưới -->
+                <option value="-costPro">Giá tăng dần</option><!-- - giảm từ trên xuống dưới -->
+            </select>
+        </div>
+
+        <table class="table mt-3">
+            <thead>
+                <tr>
+                    <th scope="col">STT</th>
+                    <th ng-click="sortColumn('id')" scope="col">ID</th>
+                    <th scope="col">Tên Sản Phẩm</th>
+                    <th scope="col">Giá Gốc</th>
+                    <th scope="col">Giá Bán</th>
+                    <th scope="col">Ngày Tạo</th>
+                    <th scope="col">Người Tạo</th>
+                    <th scope="col">Trạng Thái</th>
+                    <th scope="col">Thao Tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- lặp lại in4-pro-->
+                <tr ng-repeat=" (index , value) in listProduct
+                | orderBy:sortSalary : 'Sắp xếp tăng giảm theo lương' 
+                | filter : {
+                    id : id
+                }
+                ">
+                    <th> {{index}} </th> <!-- STT -->
+                    <th> {{value.id}} </th> <!-- ID -->
+                    <td> {{value.namePro}} </td> <!-- Tên Sản Phẩm -->
+                    <td> {{value.costPro | currency:'': 0 }}VNĐ</td> <!-- Giá Gốc -->
+                    <td> {{value.costPro * (value.sale/100) |currency : '' : 0 }}VNĐ </td><!-- Giá Bán -->
+                    <td> {{value.createAt | date : 'dd/MM/yyyy' }} </td> <!-- Ngày Tạo -->
+                    <td> {{value.createBy}} </td> <!-- Người Tạo -->
+                    <td> {{value.status}} </td> <!-- Trạng Thái -->
+                    <td>
+                        <a type="button" ng-click="delete( value.id )" class="btn btn-outline-danger"><ion-icon
+                                name="trash-outline"></ion-icon></a>
+                        <a href="#!/updateProduct/{{value.id}}" type="button" class="btn btn-outline-warning"><ion-icon
+                                name="create-outline"></ion-icon></a>
+                        <a href="#!/viewProduct/{{value.id}}" type="button" class="btn btn-outline-primary"><ion-icon
+                                name="eye"></ion-icon></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<link rel="stylesheet" href="css/productCSS/listProduct.css">

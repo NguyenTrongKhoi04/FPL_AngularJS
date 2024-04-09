@@ -1,0 +1,152 @@
+/* CSS các thương hiệu điện thoại */
+.row .list-brands a {
+    align-items: center;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    display: flex;
+    height: 34px;
+    justify-content: center;
+    margin: 0 10px 10px 0;
+    padding: 2px 4px;
+}
+
+.row .list-brands a {
+    text-decoration: none;
+}
+
+.row .list-brands a img {
+    height: 20px;
+}
+
+.row .list-brands a span {
+    color: #111;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: Roboto, sans-serif;
+}
+
+/* CSS chơi theo như cầu */
+.row .play span {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.row .categories-content .categories-content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.row .categories-content .categories-content-wrapper .item-categories-outer {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 111px;
+}
+
+.row .categories-content .categories-content-wrapper .item-categories-outer .item-categories {
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+    display: block;
+    min-height: 125px;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    width: 100%;
+}
+
+
+.categories-content-wrapper .item-categories-outer .item-categories span {
+    color: #fff;
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 5px;
+    max-width: 114px;
+    padding: 0 5px;
+    width: 100%;
+    word-break: break-word;
+    z-index: 1;
+}
+
+/* CSS cho chọn theo tiêu chí */
+.chonTheoTieuChi {
+    display: flex;
+    margin-bottom: 5px;
+    flex-wrap: wrap;
+}
+
+.chonTheoTieuChi button {
+    align-items: center;
+    background: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    color: #444;
+    cursor: pointer;
+    display: flex;
+    font-size: 12px;
+    height: 34px;
+    margin: 0 10px 10px 0;
+    padding: 5px 10px;
+    white-space: nowrap;
+}
+
+.chonTheoTieuChi button .icon {
+    align-items: center;
+    display: flex;
+    width: 15px;
+}
+
+.dropdown .dropdown-menu ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 5px;
+    width: 340px;
+    padding: 10px;
+    margin-bottom: 0px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, .5);
+}
+
+.dropdown .dropdown-menu ul li a {
+    align-items: center;
+    background: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    color: #444;
+    cursor: pointer;
+    display: flex;
+    font-size: 12px;
+    height: 34px;
+    padding: 5px 5px;
+    white-space: nowrap;
+}
+
+.dropdown .btn:hover {
+    background: #fef2f2;
+    border: 1px solid #d70018;
+    color: #d70018;
+}
+
+/* CSS cho button "Xem thêm điện thoại */
+.row .wrapperBtn .btn {
+    color: #c69a39;
+    width: 300px;
+    text-align: center;
+    border-radius: 5px;
+    padding: 8px 0;
+    transition: .5s all ease;
+    margin: 0 auto;
+    border: 1px solid #c69a39;
+    font-size: 18px;
+    font-weight: 700px;
+    text-decoration: none;
+}
+
+.row .wrapperBtn .btn:hover {
+    color: #fff;
+    background: #c69a39;
+}

@@ -1,0 +1,53 @@
+<div class="p-4" style="min-height: 800px;">
+    <h4 class="text-primary mb-4">Thông tin sản phẩm</h4>
+    <div>
+        <div class="card mb-3" style="max-width: 900px;">
+            <div class="row g-0">
+                <div class="col-md-8">
+                    <div class="card-body ms-4">
+                        <p class="card-text align-items-center ">ID:
+                            <span class="badge text-bg-danger">{{user.id }}</span>
+                        </p>
+
+                        <p class="card-text"> tên người dùng :
+                            <span class="badge text-bg-success">{{ user.fullName }}</span>
+                        </p>
+
+                        <p class="card-text">số điện thoại :
+                            <span class="badge text-bg-warning">{{ user.phoneNumber }}</span>
+                        </p>
+
+                        <p class="card-text">email :
+                            <span class="badge text-bg-danger"> {{ user.email }}</span>
+                        </p>
+
+                        <p class="card-text">mật khẩu :
+                            <span class="badge text-bg-primary">{{ user.password }}</span>
+                        </p>
+
+                        <p class="card-text">giới tính :
+                            <span class="badge text-bg-warning"> {{ user.gender }}</span>
+                        </p>
+                        <p class="card-text">chức vụ :
+                            <span class="badge text-bg-secondary"> {{ user.role}}</span>
+                        </p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                <div class="col-md-4 border-start d-flex flex-column align-items-center ">
+                    <div class="mb-4 d-flex justify-content-center object-fit-fill w-100 h-100 "
+                        style="max-width: 250px; max-height: 200px;">
+                        <img ng-src=" {{user.image_user}} "
+                            class="img-fluid  w-100 h-100 p-1 m-4 rounded-2 rounded-circle" alt="...">
+                    </div>
+                    <span ng-show="user.image_user">Ảnh người dùng</span>
+                    <span ng-if="!user.image_user">người dùng chưa thiết lập ảnh</span>
+                    <button class="btn btn-primary">Thay đổi avatar</button>
+                </div>
+            </div>
+        </div>
+        <div>
+            <a href="#!listUser" class="btn btn-warning float-start">Quay lại trang</a>
+        </div>
+    </div>
+</div>

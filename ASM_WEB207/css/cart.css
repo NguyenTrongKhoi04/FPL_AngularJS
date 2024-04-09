@@ -1,0 +1,7 @@
+/* 1.CSS cho phần span hiện thị lỗi */
+.error-message {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: #ff0000;
+    font-size: 14px;
+}

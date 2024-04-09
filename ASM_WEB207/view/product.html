@@ -1,0 +1,148 @@
+<div class="container mb-5  ">
+    <div class="row">
+        <div class="title-product d-flex flex-lg-row flex-column align-items-lg-center justify-content-lg-between  ">
+            <h1>Điện thoại Tecno POVA 5 Chính hãng (POVA 5 X Free Fire)</h1>
+            <div class="rating-show-start">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <a href="#"> (8 đánh giá)</a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class=" col-sm-12 col-xl-3 ">
+            <div class="image-product">
+                <img src="{{product.urlImg}}" alt="">
+            </div>
+            <div class="store-address">
+                <p>Danh sách cửa hàng:</p>
+                <select class="form-select" aria-label="Default select example" name="stores" id="stores"
+                    onchange="showAddresses()">
+                    <option value="hanoi">Hà Nội</option>
+                    <option value="hcm">Hồ Chí Minh</option>
+                </select>
+                <div id="addresses">
+                    <!-- Hiện thị danh sách cửa hàng -->
+                </div>
+            </div>
+        </div>
+        <div class="product-detail  col-sm-12 col-xl-6  ">
+            <div class="price-and-status ">
+                <div class="price-product">
+                    <p class="price"> {{product.costPro * (product.sale/100) |currency : '₫' : 0 }} ₫</p>
+                    <p class="price-old">{{product.costPro | currency:'': 0 }}₫</p>
+                </div>
+                <div class="status-box">
+                    <i class="fa-regular fa-square-check" style="color: #c69a39;"></i>
+                    <span>Còn hàng</span>
+                </div>
+            </div>
+            <p>Chọn phiên bản để xem giá và chi nhánh còn hàng :</p>
+            <div class="attribute-list mb-2">
+                <div class="attribute-title">
+                    <p class="m-0 ">Màu sắc</p>
+                </div>
+                <div class="attribute-value">
+                    <div class="data-color ">
+                        <div class="color-item" style="background-color: #deddba;"></div>
+                        <div class="color-item " style="background-color:#161718; "></div>
+                        <div class="color-item " style="background-color:#0954c2; "></div>
+                    </div>
+                </div>
+            </div>
+            <div class="attribute-list">
+                <div class="attribute-title">
+                    <p class="m-0">Bộ nhớ</p>
+                </div>
+                <div class="attribute-value">
+                    <div class="data-items ">
+                        <div class="item">8-128GB</div>
+                        <div class="item">8-256GB</div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-more-info">
+                <div class="BH_GH"><!-- Bảo hành + Giao hàng  -->
+                    <p>Thời gian bảo hành :
+                        <span>BH Thường 12 Tháng </span>
+                        <a href="#"> (Xem chi tiết)</a>
+                    </p>
+                    <p>Giao hàng tận nơi miễn phí trong 30 phút
+                        <a href="#"> (Tìm hiểu thêm)</a>
+                    </p>
+                </div>
+                <div class="sale-box">
+                    <p class="sale-box-title">Khuyễn mãi</p>
+                    <ul class="location-1">
+                        <li>Tặng: <span>Miễn phí BHV</span> lần thứ 5, khi đã mua BHV lần thứ 4.</li>
+                        <li>Quý khách <strong><a href="#">Đăng nhập </a></strong>để kiểm tra đơn hàng</li>
+                        <li>Giảm đến <span>30% </span>khi mua phụ kiện.</li>
+                        <li>- Chat online: <strong><a href="#">Chat Facebook</a></strong></li>
+                        <li>- Hà Nội: <strong><a href="#"> 097.120.6688</a></strong></li>
+                        <li>- Hồ Chí Minh: <strong><a href="#"> 097.120.6688</a></strong></li>
+                        <li>- Vĩnh Phúc: <strong><a href="#"> 097.120.6688</a></strong></li>
+                        <li>
+                            <img src="/images/image_product/25-1-sale.jpg" alt="">
+                        </li>
+                    </ul>
+                </div>
+                <div class="product-address-hotline">
+                    Hotline: 0969.120.120 (HN) | 0965.123.123 (HCM) | 096.123.9797 (ĐN)
+                </div>
+                <div class="buy-box">
+                    <button class="btn add-to-cart ">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <!-- thêm vào giỏ hàng -->
+                        <a ng-click="addToCart()" style="text-decoration: none; color:black ">
+                            THÊM VÀO GIỎ HÀNG
+                        </a>
+                    </button>
+                    <button class="btn buy-now ">
+                        <!-- Mua ngày -->
+                        <a href="#!buyNow/product.id" style="text-decoration: none; color:black ">
+                            MUA NGAY
+                        </a>
+                    </button>
+                </div>
+                <div class="installment-btn">
+                    <a href="#">
+                        <span>Mua trả góp 0%</span>
+                        <span>(Duyệt HS 5 phút, Trả góp qua thẻ)</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class=" col-sm-12 col-xl-3  ">
+            <div class="product-related-title">
+                Sản Phẩm Tương Tự
+            </div>
+            <div class="product-related-list">
+                <div class="product-related-item">
+                    <div class="product-img">
+                        <img src="../images/image_product/iphone-xs-max-vang.jpg.webp" alt="">
+                    </div>
+                    <div class="product-content">
+                        <p class="name">iPhone XS Max cũ (Chính hãng)</p>
+                        <p class="price">6.750.000 ₫</p>
+                        <p class="link-name">Xem chi tiết</p>
+                    </div>
+
+                </div>
+                <div class="product-related-item">
+                    <div class="product-img">
+                        <img src="../images/image_product/iphone-xs-max-vang.jpg.webp" alt="">
+                    </div>
+                    <div class="product-content">
+                        <p class="name">Samsung Galaxy Note 9 cũ (128GB - 512GB)</p>
+                        <p class="price">6.750.000 ₫</p>
+                        <p class="link-name">Xem chi tiết</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="/css/product.css"><!-- Link CSS Product -->

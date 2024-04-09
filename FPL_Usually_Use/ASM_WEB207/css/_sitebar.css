@@ -1,0 +1,44 @@
+/* 1. CSS cố định cho siteBar */
+.clear {
+    margin-top: 125px;
+}
+
+header .navbar {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    z-index: 100;
+    background-color: rgb(70, 10, 235);
+    width: 100%;
+    transform: translateX(-50%);
+}
+
+/* 1. CSS cho tabbed_pane */
+#pills-phuKien-tab,
+#pills-dienThoai-tab {
+    background: white;
+    color: #ffc107;
+}
+
+#pills-phuKien-tab.active,
+#pills-dienThoai-tab.active {
+    background: #ffc107;
+    color: white;
+}
+
+/* 1.  Css cho id :  heart-icon */
+heart_icon {
+    background: transparent;
+    border: none;
+    color: grey;
+    font-size: 20px;
+}
+
+/* 1.CSS tên người dùng */
+.userName {
+    max-width: 9.375rem;
+    padding-left: 0.3125rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #fef6f5;
+}

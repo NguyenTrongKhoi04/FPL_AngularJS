@@ -1,0 +1,65 @@
+<div class="p-4" style="min-height: 800px;">
+    <h4 class="text-primary mb-4">Thông tin người dùng</h4>
+    <div>
+        <form class="form">
+            <div class="mb-3">
+                <div class="form-floating ">
+                    <input type="text" readonly ng-model="User.fullName" class="form-control" id="nameUser"
+                        placeholder="name@example.com" autocomplete="off">
+                    <label for="nameUser">Tên người dùng</label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <div class="input-group">
+                    <div class="form-floating ">
+                        <input type="text" readonly ng-model="User.phoneNumber" class="form-control" id="phoneUser"
+                            placeholder="name@example.com" autocomplete="off">
+                        <label for="phoneUser">Số điện thoại</label>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mb-3">
+                <div class="form-floating ">
+                    <input type="text" readonly ng-model="User.email" class="form-control" id="email"
+                        placeholder="name@example.com" autocomplete="off">
+                    <label for="email">email <span ng-show="!User.email">trống</span></label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <div class="input-group ">
+                    <div class="form-floating">
+                        <input type="text" ng-model="User.password" class="form-control" id="password"
+                            placeholder="name@example.com" ng-change="PwTrim()">
+                        <label for="password">mật khẩu</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex gap-1 mb-3 "><!-- Giới tính -->
+                <label>Giới tính : </label>
+                <input type="radio" id="nam" name="fav_language" ng-checked="User.gender === 'Nam' "
+                    class="form-check-input form-check-input-active" disabled>
+                <label for="nam">Nam</label><br>
+                <input type="radio" id="nữ" name="fav_language" ng-checked="User.gender === 'Nữ' "
+                    class="form-check-input form-check-input-active" disabled>
+                <label for="nữ">Nữ</label><br>
+                <input type="radio" id="khác" name="fav_language" ng-checked="User.gender === 'Khác' "
+                    class="form-check-input form-check-input-active" disabled>
+                <label for="khác">Khác</label>
+            </div>
+
+            <div class="d-flex justify-content-end gap-2">
+                <button class="btn btn-warning" ng-click="update()"><!-- hàm thêm sản phẩm -->
+                    sửa thông tin người dùng
+                </button>
+                <a href="#!/listUser" class="btn btn-warning"><!-- hàm thêm sản phẩm -->
+                    Quay về trang
+                </a>
+            </div>
+        </form>
+    </div>
+</div>

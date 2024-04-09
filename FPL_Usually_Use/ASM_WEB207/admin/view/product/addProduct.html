@@ -1,0 +1,126 @@
+<div class="p-4" style="min-height: 800px;">
+    <h4 class="text-primary mb-4">Thông tin sản phẩm</h4>
+    <div>
+        <form class="form">
+            <!-- tên sản phẩm -->
+            <div class="mb-3">
+                <div class="form-floating ">
+                    <input type="text" ng-model="Pro.namePro" class="form-control" id="namePro"
+                        placeholder="name@example.com" autocomplete="off">
+                    <label for="namePro">Tên Sản Phẩm</label>
+                </div>
+                <label class="ErrorContent-namePro" ng-show="showErrorContent.namePro"
+                    ng-bind="contentError.namePro">Lỗi tên sản phẩm</label>
+            </div>
+
+            <!-- giá gốc -->
+            <div class="mb-3">
+                <div class="input-group">
+                    <div class="form-floating ">
+                        <input type="text" ng-model="Pro.costPro" class="form-control" id="costPro"
+                            placeholder="name@example.com" autocomplete="off" ng-keyup="checkIsNotANumber()">
+                        <label for="costPro">Giá Sản Phẩm</label>
+                    </div>
+                    <span class="input-group-text">.000Đ</span>
+                </div>
+                <label class="ErrorContent-costPro" ng-show="showErrorContent.costPro"
+                    ng-bind="contentError.costPro">Lỗi giá sản phẩm</label>
+            </div>
+
+            <!-- số lượng -->
+            <div class="mb-3">
+                <div class="form-floating ">
+                    <input type="text" ng-model="Pro.quantity" class="form-control" id="quantity"
+                        placeholder="name@example.com" autocomplete="off" ng-keyup="checkIsNotANumber()">
+                    <label for="quantity">Số lượng sản phẩm</label>
+                </div>
+                <label class="ErrorContent-costPro" ng-show="showErrorContent.quantity"
+                    ng-bind="contentError.quantity">Lỗi số lượng</label>
+            </div>
+
+            <!-- sale -->
+            <div class="mb-3">
+                <div class="input-group ">
+                    <div class="form-floating">
+                        <input type="text" ng-model="Pro.sale" class="form-control" id="sale"
+                            placeholder="name@example.com" ng-keyup="checkIsNotANumber()">
+                        <label for="sale">Khuyến Mãi</label>
+                    </div>
+                    <span class="input-group-text">%</span>
+                </div>
+                <label class="ErrorContent-sale" ng-show="showErrorContent.sale" ng-bind="contentError.sale">Lỗi
+                    khuyến mãi</label>
+            </div>
+
+            <!-- nguồn gốc -->
+            <div class="mb-3">
+                <select class="form-select" ng-model="Pro.origin" aria-label="Default select example"
+                    style="height: 58px;">
+                    <option>Xuất Xứ</option>
+                    <option value="VietNamese">VietNamese</option>
+                    <option value="Chine">Chine</option>
+                    <option value="America">America</option>
+                </select>
+                <label class="ErrorContent-origin" ng-show="showErrorContent.origin" ng-bind="contentError.origin">Lỗi
+                    xuất xứ</label>
+            </div>
+
+            <!-- ảnh -->
+            <div class="mb-3">
+                <div class="mb-3  d-flex flex-row" style="max-height: 40px;">
+                    <!-- giá trị nhập vào ảnh theo đường dẫn ảnh -->
+                    <input class="form-control rounded-end-0" type="file" id="formFile">
+                    <button class="btn btn-primary rounded-start-0" type="button" data-bs-toggle="collapse"
+                        style="width: 250px;" data-bs-target="#collapseExample">
+                        Ảnh theo đường dẫn
+                    </button>
+                </div>
+                <div class="collapse" id="collapseExample">
+                    <div class="card card-body p-0">
+                        <!-- ảnh theo đg dẫn. -->
+                        <input ng-model="Pro.urlImg" class="form-control" type="text"
+                            placeholder="Nhập đường dẫn vào đấy">
+                    </div>
+                </div>
+                <label class="ErrorContent-image" ng-show="showErrorContent.urlImg" ng-bind="contentError.urlImg">Lỗi
+                    không chọn ảnh</label>
+            </div>
+
+            <!-- mô tả -->
+            <div class="mb-3">
+                <label for="discription">Mô tả</label>
+                <!-- mô tả sản phẩm -->
+                <textarea type="text" ng-model="Pro.describe" class="form-control" id="discription"></textarea>
+            </div>
+
+            <!-- trạng thái -->
+            <div class="mb-3">
+                <label class="mb-2">Trạng Thái Sản Phẩm </label>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" value="Đang Kinh Doanh" id="status1" ng-model="Pro.status"
+                        type="radio" name="switch-option" ng-change="checkStatusPro()">
+                    <label class="form-check-label" for="status1">Đanh Kinh Doanh</label>
+                </div>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" value="Dừng Kinh Doanh" id="status2" type="radio"
+                        name="switch-option" ng-model="Pro.status" ng-change="checkStatusPro()">
+                    <label class="form-check-label" for="status2">Dừng Kinh Doanh</label>
+                </div>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" value="Hết Hàng" id="status3" type="radio" name="switch-option"
+                        ng-model="Pro.status" ng-change="checkStatusPro()">
+                    <label class="form-check-label" for="status3">Hết Hàng</label>
+                </div>
+                <label class="contentError_status" ng-show="showErrorContent.status"
+                    ng-bind="contentError.status">dsds</label>
+            </div>
+            <div class="d-flex justify-content-end">
+                <button class="btn btn-warning" ng-click="Add()"><!-- hàm thêm sản phẩm -->
+                    Thêm Sản Phẩm
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<link rel="stylesheet" href="css/productCSS/addProduct.css">

@@ -1,0 +1,20 @@
+{
+  "products": [
+    {
+      "id": "3465",
+      "ma_sp": "kljlkj",
+      "ten": "hlkjlljlkkjoiuioiu",
+      "loai": "Đồ ăn trưa",
+      "han_su_dung": "12/04/2004",
+      "gia": 4554444
+    },
+    {
+      "id": "7c77",
+      "ma_sp": "jlj",
+      "ten": "fasdasdsadasd",
+      "loai": "Đồ ăn trưa",
+      "han_su_dung": "29/07/2004",
+      "gia": 2687686
+    }
+  ]
+}

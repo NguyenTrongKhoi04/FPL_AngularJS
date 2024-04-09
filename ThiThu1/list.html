@@ -1,0 +1,30 @@
+
+
+<!-- TODO Table -->
+<table class="table w-75 mx-auto">
+  <thead>
+    <tr>
+      <th scope="col">STT</th>
+      <th scope="col">Mã Sản Phẩm</th>
+      <th scope="col">Tên Sản Phẩm</th>
+      <th scope="col">Loại</th>
+      <th scope="col">Hạn sử dụng</th>
+      <th scope="col">Giá</th>
+      <th scope="col">Thao tác</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="i in listData">
+      <th scope="row">{{index +1}}</th>
+      <td>{{i.ma_sp}}</td>
+      <td>{{i.ten}}</td>
+      <td>{{i.loai}}</td>
+      <td>{{i.han_su_dung}}</td>
+      <td>{{i.gia}}</td>
+      <td>
+        <buttton class="btn btn-primary" ng-click="detail(i.id)">Chi Tiết</buttton> 
+        <buttton class="btn btn-danger" ng-click="delete(i.id)">Xóa</buttton>
+    </td>
+    </tr>
+  </tbody>
+</table>

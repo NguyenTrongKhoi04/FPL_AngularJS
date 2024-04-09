@@ -1,0 +1,28 @@
+<h3 class="text-center my-4">DANH SÁCH ĐIỆN THOẠI</h3>
+<table class="table mx-auto w-75 table-bordered">
+  <div class="w-75 mx-auto mb-2">
+    <a href=""><button class="btn d-flex btn-success ms-auto">THÊM</button></a>
+  </div>
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Ten</th>
+      <th scope="col">Hang</th>
+      <th scope="col">Gia</th>
+      <th scope="col">Theo Tac</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat=" i in listPhone ">
+      <th scope="row">{{i.id}}</th>
+      <td>{{i.ten}}</td>
+      <td>{{i.hang}}</td>
+      <td>{{i.gia}}</td>
+      <td>
+        <button class="btn btn-primary">chi tiết</button>
+        <button class="btn btn-warning">sửa</button>
+        <button class="btn btn-danger">xóa</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

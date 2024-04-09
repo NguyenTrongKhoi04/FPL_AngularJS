@@ -1,0 +1,26 @@
+<h2 class="text-center my-4">THÊM ĐIỆN THOẠI</h2>
+<div class="w-50 mt-4 mx-auto">
+  <form>
+    <label for="">ID</label>
+    <input type="text" ng-model="inputValue.id" class="form-control mb-3" />
+    <label for="" ng-show="check.id" style="color: red">Nnập id</label>
+    <label for="">Tên</label>
+    <input type="text" ng-model="inputValue.name" class="form-control mb-3" />
+    <label for="">Hãng</label>
+    <select
+      ng-model="inputValue.hang"
+      class="form-select form-select-lg mb-3"
+    >
+      <option value="Apple">Apple</option>
+      <option value="SamSung">SamSung</option>
+      <option value="Oppe">Oppo</option>
+    </select>
+    <label for="">Giá</label>
+    <input type="text" ng-model="inputValue.gia" class="form-control mb-3" />
+    <div class="text-center">
+      <button class="btn btn-success" ng-click="onSubmit()">
+        {{inputValue.hang}}
+      </button>
+    </div>
+  </form>
+</div>

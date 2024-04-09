@@ -1,0 +1,22 @@
+<form class="w-75 mx-auto">
+    <h1>Thông tin chi tiết đồ ăn</h1>
+    <label for="">Mã sản phẩm</label>
+    <input type="text" class="form-control" ng-model="input.ma_sp">
+    <label for="">Tên sản phẩm</label>
+    <input type="text" class="form-control" ng-model="input.ten">
+    <label for="">Loại</label>
+    <select class="form-select-lg form-select" ng-model="input.loai">
+        <option value="Đồ ăn sáng">Đồ ăn sáng</option>
+        <option value="Đồ ăn trưa">Đồ ăn trưa</option>
+        <option value="Đồ ăn sáng">Đồ ăn tối</option>
+    </select>
+    <label for="">Hạn sử dụng</label>
+    <input type="text" ng-keypress="formatDate($event)" maxlength="10" class="form-control" ng-model="input.han_su_dung">
+    <label for="">Giá</label>
+    <input type="number" class="form-control" ng-model="input.gia">
+    <label for="" ng-show="check.gia" style="color: red;">Nhập giá là số nguyên lớn hơn 100</label>
+    <div class="mx-auto w-50 mt-3 text-center">
+        <button type="reset" class="btn btn-light">RESET</button>
+        <button class="btn btn-success" ng-click="onSubmit()">Thêm mới</button>
+    </div>
+</form>

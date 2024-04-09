@@ -1,0 +1,10 @@
+{
+    "phone": [
+        {
+            "id" :1,
+            "ten" : "iphone 14",
+            "hang": "Apple",
+            "gia": 30
+        }
+    ]
+}
